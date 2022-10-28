@@ -1,0 +1,12 @@
+applications:
+  - name: sdk
+    path: .
+    buildpacks:
+      - nodejs_buildpack
+    memory: 256M
+    command: npm run start:prod
+    routes:
+      - route : jisong-sdk.cfapps.us10-001.hana.ondemand.com
+    services : 
+      - application-xsuaa
+      - destinationService

@@ -1,0 +1,21 @@
+{
+  "xsappname" : "application-xsuaa",
+  "tenant-mode": "dedicated", 
+  "scopes"     : [ { 
+                    "name" : "$XSAPPNAME.User", 
+                    "description" : "User" }
+],
+  "role-templates": [ { 
+                    "name"                : "User", 
+                    "description"         : "User", 
+                    "scope-references"    : [ "$XSAPPNAME.User" ] 
+                    }
+                    ],
+  "role-collections": [
+        {
+          "name": "User",
+          "description": "User",
+          "role-template-references": ["$XSAPPNAME.User"]
+        }
+  ] 
+}
