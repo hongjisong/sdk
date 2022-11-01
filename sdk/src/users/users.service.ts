@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { SCIMUsersShadowUsersApi } from '../../platformAPI';
+import { SCIMUsersShadowUsersApi } from '../../PlatformAPI';
 
 @Injectable()
 export class UsersService {
