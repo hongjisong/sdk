@@ -1,0 +1,25 @@
+applications:
+  #approuter
+  - name: approuter
+    path: .
+    routes:
+      - route: https://jisong-approuter.cfapps.us10-001.hana.ondemand.com
+    memory: 128M
+    buildpacks:
+      - nodejs_buildpack
+    services:
+      - application-xsuaa
+    env:
+      SESSION_TIMEOUT: 40
+      destinations: >
+        [
+          {
+            "name" : "server",
+            "url":"https://jisong-sdk.cfapps.us10-001.hana.ondemand.com",          
+            "forwardAuthToken":true
+          },
+          {
+            "name" : "ui5app",
+            "url":"https://jisong-web.cfapps.us10-001.hana.ondemand.com"          
+          }
+        ]

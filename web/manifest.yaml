@@ -1,0 +1,9 @@
+applications:
+#frontend ui5 app
+  - name: webapp
+    path: uimodule/dist
+    routes:
+      - route: jisong-web.cfapps.us10-001.hana.ondemand.com
+    memory: 128M
+    buildpacks:
+      - staticfile_buildpack

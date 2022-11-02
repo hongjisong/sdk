@@ -2,7 +2,26 @@
     <Page id="page" title="{i18n>title}">
         <content>
             <Table items="{users>/resources}">
-
+                <columns>
+                    <Column>
+                        <Text text="ID"/>
+                    </Column>
+                    <Column>
+                        <Text text="Name"/>
+                    </Column>
+                    <Column>
+                        <Text text="E-mail"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{users>id}"/>
+                            <Text text="{users>familyName} {users>givenName}"/>
+                            <Text text="{users>emails/0/value}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
             </Table>
         </content>
     </Page>
